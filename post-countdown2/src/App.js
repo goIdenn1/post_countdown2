@@ -1,17 +1,31 @@
 import logo from './logo.svg';
-import Header from "./Header.js";
+
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
+import Home from './Home.js';
+import Quiz from './Quiz.js';
+import Result from './Result.js';
 
 function App() {
   return (
     <BrowserRouter>
     <div className="App">
       Hi
-      <Header />
+     
+    <Routes>
+      <Route path="/" exact>
+        <Home />
 
+      </Route>
+      <Route path="/quiz" exact>
+        <Quiz />
+      </Route>
+      <Route path="/result" exact>
+        <Result />
+      </Route>
+    </Routes>
     </div>
-    <Footer />
+    
     </BrowserRouter>
     
   );
