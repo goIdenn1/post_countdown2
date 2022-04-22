@@ -4,6 +4,6 @@ const Quiz = () => {
             Quiz
         </div>
     );
-};
+}
 
 export default Quiz;

@@ -4,6 +4,6 @@ const Result = () => {
         results
     </div>
     );
-};
+}
 
 export default Result;
