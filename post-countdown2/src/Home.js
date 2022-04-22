@@ -1,6 +1,25 @@
-import { MenuItem, TextField } from "@mui/material";
+import { Button, MenuItem, TextField } from "@mui/material";
+import { useState } from "react";
+import { useHistory } from "react";
+import Categories from "./Categories.js";
 
-const Home = () => {
+const Home = ({ name, setName, fetchQuestions }) => {
+    const [category, setCategory] = useState("");
+    const [difficulty, setDifficulty] = useState("");
+
+    const history = useHistory();
+
+    const handleSubmit = () => {
+        if (!category || !difficulty || !name) {
+          
+          return;
+        } else {
+         
+          fetchQuestions(category, difficulty);
+          history.push("/quiz");
+        }
+      };
+
     return(
         <div>
             Home page
